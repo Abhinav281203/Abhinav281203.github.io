@@ -55,6 +55,18 @@
       type();
       movingBackgroundImage();
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var bodyClass = document.body.className;
+
+        if (bodyClass.includes("home-page")) {
+            document.querySelector('a[href="{{ site.baseurl }}/index.html"]').style.color = "white";
+            document.querySelector('a[href="{{ site.baseurl }}/resume.html"]').style.color = "white";
+        } else if (bodyClass.includes("resume-page")) {
+            document.querySelector('a[href="{{ site.baseurl }}/index.html"]').style.color = "black";
+            document.querySelector('a[href="{{ site.baseurl }}/resume.html"]').style.color = "black";
+        }
+    });
   </script>
 
 
