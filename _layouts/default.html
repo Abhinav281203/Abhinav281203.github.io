@@ -50,26 +50,23 @@
 
   {{content}}
 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function (event) {
       type();
       movingBackgroundImage();
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        var bodyClass = document.body.className;
-
-        if (bodyClass.includes("home-page")) {
-            document.querySelector('a[href="{{ site.baseurl }}/index.html"]').style.color = "white";
-            document.querySelector('a[href="{{ site.baseurl }}/resume.html"]').style.color = "white";
-        } else if (bodyClass.includes("resume-page")) {
-            document.querySelector('a[href="{{ site.baseurl }}/index.html"]').style.color = "black";
-            document.querySelector('a[href="{{ site.baseurl }}/resume.html"]').style.color = "black";
-        }
+  
+      var currentPage = window.location.pathname;
+  
+      if (currentPage === "/index.html" || currentPage === "/") {
+        $(".navbar-nav li:contains('Home') a").css("color", "white");
+        $(".navbar-nav li:contains('Resume') a").css("color", "white");
+      } else if (currentPage === "/resume.html") {
+        $(".navbar-nav li:contains('Home') a").css("color", "black");
+        $(".navbar-nav li:contains('Resume') a").css("color", "black");
+      }
     });
   </script>
-
-
   <script type="text/javascript" src="index.js"></script>
 </body>
 
