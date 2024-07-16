@@ -6154,6 +6154,11 @@ textarea {
     font-size: 11px
 }
 
+.no-bold {
+    font-weight: normal;
+}
+  
+
 @media (max-width: 767px) {
     .mycol-xs-12 {
         padding-left: 5%;
